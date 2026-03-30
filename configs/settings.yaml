@@ -1,0 +1,42 @@
+pipeline:
+  name: "customer_data_pipeline"
+  version: "1.0.0"
+  environment: "production"
+
+data:
+  raw_path: "data/raw/"
+  processed_path: "data/processed/"
+  supported_formats: ["csv", "parquet", "json"]
+  encoding: "utf-8"
+  chunk_size: 50000  # rows per chunk for large files
+
+cleaning:
+  drop_duplicate_subset: null  # null = all columns
+  missing_value_threshold: 0.5  # drop columns with > 50% missing
+  outlier_std_threshold: 3.0
+  date_formats:
+    - "%Y-%m-%d"
+    - "%d/%m/%Y"
+    - "%m-%d-%Y"
+    - "%Y%m%d"
+
+schema:
+  required_columns:
+    - customer_id
+    - email
+    - signup_date
+    - country
+  column_types:
+    customer_id: "string"
+    email: "string"
+    age: "Int64"          # nullable integer
+    revenue: "float64"
+    signup_date: "datetime64[ns]"
+    is_active: "bool"
+
+logging:
+  level: "INFO"
+  log_to_file: true
+  log_path: "logs/pipeline.log"
+  max_bytes: 10485760   # 10 MB
+  backup_count: 5
