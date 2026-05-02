@@ -190,3 +190,11 @@ class DataPipeline:
             df.to_csv(path, index=False, encoding=cfg.data.encoding)
         else:
             df.to_parquet(path.with_suffix(".parquet"), index=False)
+
+
+    def _print_stats(self, df: pd.DataFrame) -> None:
+        #print(f"[SUCCESS] CSV loaded successfully from {self.save_path}")
+        print(f"[SHAPE], Dataset has this shape, {df.shape}")
+        print(f"[COLUMNS], Dataset has these colums, {df.columns}")
+        print(f"[INFO], Dataset has this info, {df.info()}")
+        print(f"[STATS], Dataset has this statistical description, {df.describe()}")        
