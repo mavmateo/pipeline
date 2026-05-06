@@ -1,4 +1,4 @@
-# pipeline
+# ETL pipeline implemented with the medallion architecture
 
 data_pipeline/
 ├── configs/settings.yaml     # All config in one place
@@ -16,3 +16,4 @@ data_pipeline/
 
 
 
+# Separate function calling for bronze, silver, and gold level data cleaning & transformation
