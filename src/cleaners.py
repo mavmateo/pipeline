@@ -426,23 +426,48 @@ def clip_outliers(
 ) -> pd.DataFrame:
     """
     Clip values beyond N standard deviations to the boundary value.
-    Clipping is preferred over dropping in most production pipelines
-    because it preserves row count.
+    Handles Int64 columns with decimal values gracefully.
     """
     n_std = n_std or cfg.cleaning.outlier_std_threshold
     df = df.copy()
+    
     num_cols = columns or df.select_dtypes(include="number").columns.tolist()
 
     for col in num_cols:
         series = df[col].dropna()
+        if len(series) == 0:
+            continue
+            
         mean, std = series.mean(), series.std()
         if pd.isna(std) or std == 0:
             continue
-        lower, upper = mean - n_std * std, mean + n_std * std
+
+        lower = mean - n_std * std
+        upper = mean + n_std * std
+
+        # === FIX: Handle Int64 / nullable integer columns safely ===
+        original_dtype = df[col].dtype
+        
+        # If column is integer type but contains decimals → convert to float
+        if pd.api.types.is_integer_dtype(original_dtype) or str(original_dtype).startswith("Int"):
+            # Check if there are any non-integer values
+            if series.mod(1).ne(0).any():
+                log.warning(
+                    "Column '%s' (%s) contains decimal values. Converting to float64 for clipping.", 
+                    col, original_dtype
+                )
+                df[col] = df[col].astype('float64')
+
+        # Now safely clip
         clipped = df[col].clip(lower=lower, upper=upper)
+
+        # Count how many values were actually changed
         n_changed = (clipped != df[col]).fillna(False).sum()
-        if n_changed:
-            log.info("Clipped %d outlier(s) in '%s'", n_changed, col)
+
+        if n_changed > 0:
+            log.info("Clipped %d outlier(s) in '%s' (lower=%.4f, upper=%.4f)", 
+                     n_changed, col, lower, upper)
+        
         df[col] = clipped
 
     return df

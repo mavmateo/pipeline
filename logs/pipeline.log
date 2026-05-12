@@ -1,0 +1,175 @@
+2026-05-12 14:19:34 | ERROR    | __main__ | Input file not found: /Users/stormchaser/dev/pyspark/customers.csv
+2026-05-12 14:20:07 | INFO     | src.pipeline | Reading /Users/stormchaser/dev/pyspark/customer.csv
+2026-05-12 14:20:08 | INFO     | src.pipeline | Pipeline 'customer_data_pipeline' started | shape=(299665, 25)
+2026-05-12 14:20:08 | INFO     | src.cleaners | Clipped 1756 outlier(s) in 'purchase_count'
+2026-05-12 14:20:08 | INFO     | src.cleaners | Clipped 1064 outlier(s) in 'referral_count'
+2026-05-12 14:20:08 | INFO     | src.cleaners | Clipped 174 outlier(s) in 'satisfaction_score'
+2026-05-12 14:20:08 | INFO     | src.pipeline | ============================================================
+2026-05-12 14:20:08 | INFO     | src.pipeline | PIPELINE COMPLETE
+2026-05-12 14:20:08 | INFO     | src.pipeline |   Rows : 299665 → 299665 (-0)
+2026-05-12 14:20:08 | INFO     | src.pipeline |   Cols : 25 → 25
+2026-05-12 14:20:08 | INFO     | src.pipeline |   Steps: normalize_column_names, drop_empty_columns, drop_high_missing_columns, drop_duplicates, strip_string_columns, normalise_email, remove_pii_columns, cast_column_types, clip_outliers, impute_missing, normalise_country_code, add_customer_tenure_days, add_age_bucket, flag_high_value_customers
+2026-05-12 14:20:08 | INFO     | src.pipeline |     normalize_column_names                     69.1 ms
+2026-05-12 14:20:08 | INFO     | src.pipeline |     drop_empty_columns                         10.4 ms
+2026-05-12 14:20:08 | INFO     | src.pipeline |     drop_high_missing_columns                   9.0 ms
+2026-05-12 14:20:08 | INFO     | src.pipeline |     drop_duplicates                           124.8 ms
+2026-05-12 14:20:08 | INFO     | src.pipeline |     strip_string_columns                       39.7 ms
+2026-05-12 14:20:08 | INFO     | src.pipeline |     normalise_email                             0.0 ms
+2026-05-12 14:20:08 | INFO     | src.pipeline |     remove_pii_columns                          0.0 ms
+2026-05-12 14:20:08 | INFO     | src.pipeline |     cast_column_types                           6.9 ms
+2026-05-12 14:20:08 | INFO     | src.pipeline |     clip_outliers                              78.4 ms
+2026-05-12 14:20:08 | INFO     | src.pipeline |     impute_missing                             43.9 ms
+2026-05-12 14:20:08 | INFO     | src.pipeline |     normalise_country_code                     21.4 ms
+2026-05-12 14:20:08 | INFO     | src.pipeline |     add_customer_tenure_days                    0.0 ms
+2026-05-12 14:20:08 | INFO     | src.pipeline |     add_age_bucket                              0.0 ms
+2026-05-12 14:20:08 | INFO     | src.pipeline |     flag_high_value_customers                   0.0 ms
+2026-05-12 14:20:08 | INFO     | src.pipeline | ============================================================
+2026-05-12 14:20:08 | INFO     | src.pipeline | Writing output to /Users/stormchaser/dev/pyspark
+2026-05-12 14:20:09 | INFO     | __main__ | Done. 299665 → 299665 rows, 25 → 25 columns
+2026-05-12 14:26:40 | INFO     | src.pipeline | Reading /Users/stormchaser/dev/staging/raw/customer.csv
+2026-05-12 14:26:40 | INFO     | src.pipeline | Pipeline 'customer_data_pipeline' started | shape=(299665, 25)
+2026-05-12 14:26:41 | INFO     | src.cleaners | Clipped 1756 outlier(s) in 'purchase_count'
+2026-05-12 14:26:41 | INFO     | src.cleaners | Clipped 1064 outlier(s) in 'referral_count'
+2026-05-12 14:26:41 | INFO     | src.cleaners | Clipped 174 outlier(s) in 'satisfaction_score'
+2026-05-12 14:26:41 | INFO     | src.pipeline | ============================================================
+2026-05-12 14:26:41 | INFO     | src.pipeline | PIPELINE COMPLETE
+2026-05-12 14:26:41 | INFO     | src.pipeline |   Rows : 299665 → 299665 (-0)
+2026-05-12 14:26:41 | INFO     | src.pipeline |   Cols : 25 → 25
+2026-05-12 14:26:41 | INFO     | src.pipeline |   Steps: normalize_column_names, drop_empty_columns, drop_high_missing_columns, drop_duplicates, strip_string_columns, normalise_email, remove_pii_columns, cast_column_types, clip_outliers, impute_missing, normalise_country_code, add_customer_tenure_days, add_age_bucket, flag_high_value_customers
+2026-05-12 14:26:41 | INFO     | src.pipeline |     normalize_column_names                     58.9 ms
+2026-05-12 14:26:41 | INFO     | src.pipeline |     drop_empty_columns                          4.7 ms
+2026-05-12 14:26:41 | INFO     | src.pipeline |     drop_high_missing_columns                   6.0 ms
+2026-05-12 14:26:41 | INFO     | src.pipeline |     drop_duplicates                           120.9 ms
+2026-05-12 14:26:41 | INFO     | src.pipeline |     strip_string_columns                       31.0 ms
+2026-05-12 14:26:41 | INFO     | src.pipeline |     normalise_email                             0.0 ms
+2026-05-12 14:26:41 | INFO     | src.pipeline |     remove_pii_columns                          0.0 ms
+2026-05-12 14:26:41 | INFO     | src.pipeline |     cast_column_types                           6.3 ms
+2026-05-12 14:26:41 | INFO     | src.pipeline |     clip_outliers                              64.0 ms
+2026-05-12 14:26:41 | INFO     | src.pipeline |     impute_missing                             29.6 ms
+2026-05-12 14:26:41 | INFO     | src.pipeline |     normalise_country_code                     20.7 ms
+2026-05-12 14:26:41 | INFO     | src.pipeline |     add_customer_tenure_days                    0.0 ms
+2026-05-12 14:26:41 | INFO     | src.pipeline |     add_age_bucket                              0.0 ms
+2026-05-12 14:26:41 | INFO     | src.pipeline |     flag_high_value_customers                   0.0 ms
+2026-05-12 14:26:41 | INFO     | src.pipeline | ============================================================
+2026-05-12 14:26:41 | INFO     | src.pipeline | Writing output to /Users/stormchaser/dev/staging/clean
+2026-05-12 14:26:41 | INFO     | __main__ | Done. 299665 → 299665 rows, 25 → 25 columns
+2026-05-12 14:52:10 | INFO     | src.pipeline | Reading /Users/stormchaser/dev/staging/raw/titanic.csv
+2026-05-12 14:52:10 | INFO     | src.pipeline | Pipeline 'customer_data_pipeline' started | shape=(891, 12)
+2026-05-12 14:52:10 | INFO     | src.cleaners | Renamed 12 column(s): {'PassengerId': 'passengerid', 'Survived': 'survived', 'Pclass': 'pclass', 'Name': 'name', 'Sex': 'sex', 'Age': 'age', 'SibSp': 'sibsp', 'Parch': 'parch', 'Ticket': 'ticket', 'Fare': 'fare', 'Cabin': 'cabin', 'Embarked': 'embarked'}
+2026-05-12 14:52:10 | INFO     | src.cleaners | Dropping 1 high-missing column(s) (>50%): ['cabin']
+2026-05-12 14:52:10 | WARNING  | src.cleaners | Could not cast 'age' to Int64: cannot safely cast non-equivalent float64 to int64
+2026-05-12 14:52:10 | INFO     | src.cleaners | Clipped 179 outlier(s) in 'age'
+2026-05-12 14:52:10 | INFO     | src.cleaners | Clipped 30 outlier(s) in 'sibsp'
+2026-05-12 14:52:10 | INFO     | src.cleaners | Clipped 15 outlier(s) in 'parch'
+2026-05-12 14:52:10 | INFO     | src.cleaners | Clipped 20 outlier(s) in 'fare'
+2026-05-12 14:52:10 | INFO     | src.transformers | Added 'age_bucket' column
+2026-05-12 14:52:10 | INFO     | src.pipeline | ============================================================
+2026-05-12 14:52:10 | INFO     | src.pipeline | PIPELINE COMPLETE
+2026-05-12 14:52:10 | INFO     | src.pipeline |   Rows : 891 → 891 (-0)
+2026-05-12 14:52:10 | INFO     | src.pipeline |   Cols : 12 → 12
+2026-05-12 14:52:10 | INFO     | src.pipeline |   Steps: normalize_column_names, drop_empty_columns, drop_high_missing_columns, drop_duplicates, strip_string_columns, normalise_email, remove_pii_columns, cast_column_types, clip_outliers, impute_missing, normalise_country_code, add_customer_tenure_days, add_age_bucket, flag_high_value_customers
+2026-05-12 14:52:10 | INFO     | src.pipeline |     normalize_column_names                      7.7 ms
+2026-05-12 14:52:10 | INFO     | src.pipeline |     drop_empty_columns                          2.3 ms
+2026-05-12 14:52:10 | INFO     | src.pipeline |     drop_high_missing_columns                   4.2 ms
+2026-05-12 14:52:10 | INFO     | src.pipeline |     drop_duplicates                             3.5 ms
+2026-05-12 14:52:10 | INFO     | src.pipeline |     strip_string_columns                        1.8 ms
+2026-05-12 14:52:10 | INFO     | src.pipeline |     normalise_email                             0.0 ms
+2026-05-12 14:52:10 | INFO     | src.pipeline |     remove_pii_columns                          0.0 ms
+2026-05-12 14:52:10 | INFO     | src.pipeline |     cast_column_types                           0.5 ms
+2026-05-12 14:52:10 | INFO     | src.pipeline |     clip_outliers                               4.9 ms
+2026-05-12 14:52:10 | INFO     | src.pipeline |     impute_missing                              4.7 ms
+2026-05-12 14:52:10 | INFO     | src.pipeline |     normalise_country_code                      0.0 ms
+2026-05-12 14:52:10 | INFO     | src.pipeline |     add_customer_tenure_days                    0.0 ms
+2026-05-12 14:52:10 | INFO     | src.pipeline |     add_age_bucket                              2.0 ms
+2026-05-12 14:52:10 | INFO     | src.pipeline |     flag_high_value_customers                   0.0 ms
+2026-05-12 14:52:10 | INFO     | src.pipeline | ============================================================
+2026-05-12 14:52:10 | INFO     | src.pipeline | Writing output to /Users/stormchaser/dev/staging/clean
+2026-05-12 14:52:10 | INFO     | __main__ | Done. 891 → 891 rows, 12 → 12 columns
+2026-05-12 15:22:21 | INFO     | src.pipeline | Reading /Users/stormchaser/dev/staging/raw/ecommerce_customer.csv
+2026-05-12 15:22:21 | INFO     | src.pipeline | Pipeline 'customer_data_pipeline' started | shape=(50000, 25)
+2026-05-12 15:22:21 | INFO     | src.cleaners | Renamed 25 column(s): {'Age': 'age', 'Gender': 'gender', 'Country': 'country', 'City': 'city', 'Membership_Years': 'membership_years', 'Login_Frequency': 'login_frequency', 'Session_Duration_Avg': 'session_duration_avg', 'Pages_Per_Session': 'pages_per_session', 'Cart_Abandonment_Rate': 'cart_abandonment_rate', 'Wishlist_Items': 'wishlist_items', 'Total_Purchases': 'total_purchases', 'Average_Order_Value': 'average_order_value', 'Days_Since_Last_Purchase': 'days_since_last_purchase', 'Discount_Usage_Rate': 'discount_usage_rate', 'Returns_Rate': 'returns_rate', 'Email_Open_Rate': 'email_open_rate', 'Customer_Service_Calls': 'customer_service_calls', 'Product_Reviews_Written': 'product_reviews_written', 'Social_Media_Engagement_Score': 'social_media_engagement_score', 'Mobile_App_Usage': 'mobile_app_usage', 'Payment_Method_Diversity': 'payment_method_diversity', 'Lifetime_Value': 'lifetime_value', 'Credit_Balance': 'credit_balance', 'Churned': 'churned', 'Signup_Quarter': 'signup_quarter'}
+2026-05-12 15:22:21 | ERROR    | src.pipeline | Step 'clip_outliers' failed: Invalid value '73.30697111393077' for dtype 'Int64'
+Traceback (most recent call last):
+  File "/Users/stormchaser/dev/pipeline/src/pipeline.py", line 164, in _run_steps
+    df = step_fn(df)
+         ^^^^^^^^^^^
+  File "/Users/stormchaser/dev/pipeline/src/cleaners.py", line 442, in clip_outliers
+    clipped = df[col].clip(lower=lower, upper=upper)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/generic.py", line 8769, in clip
+    return self._clip_with_scalar(lower, upper, inplace=inplace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/generic.py", line 8568, in _clip_with_scalar
+    result = result.where(cond, upper, inplace=inplace)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/generic.py", line 10321, in where
+    return self._where(cond, other, inplace=inplace, axis=axis, level=level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/generic.py", line 10146, in _where
+    new_data = self._mgr.where(
+               ^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/managers.py", line 473, in where
+    return self.apply(
+           ^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/managers.py", line 442, in apply
+    applied = getattr(b, f)(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/blocks.py", line 1705, in where
+    res_values = arr._where(cond, other).T
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/base.py", line 2607, in _where
+    result[~mask] = val
+    ~~~~~~^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/masked.py", line 377, in __setitem__
+    value = self._validate_setitem_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/masked.py", line 363, in _validate_setitem_value
+    raise TypeError(f"Invalid value '{value!s}' for dtype '{self.dtype}'")
+TypeError: Invalid value '73.30697111393077' for dtype 'Int64'
+2026-05-12 15:22:21 | ERROR    | __main__ | Pipeline failed: Invalid value '73.30697111393077' for dtype 'Int64'
+Traceback (most recent call last):
+  File "/Users/stormchaser/dev/pipeline/main.py", line 45, in main
+    result = pipeline.run_file(
+             ^^^^^^^^^^^^^^^^^^
+  File "/Users/stormchaser/dev/pipeline/src/pipeline.py", line 146, in run_file
+    df, result = self.run(df)
+                 ^^^^^^^^^^^^
+  File "/Users/stormchaser/dev/pipeline/src/pipeline.py", line 118, in run
+    df = self._run_steps(df, self.cleaning_steps, result)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/stormchaser/dev/pipeline/src/pipeline.py", line 164, in _run_steps
+    df = step_fn(df)
+         ^^^^^^^^^^^
+  File "/Users/stormchaser/dev/pipeline/src/cleaners.py", line 442, in clip_outliers
+    clipped = df[col].clip(lower=lower, upper=upper)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/generic.py", line 8769, in clip
+    return self._clip_with_scalar(lower, upper, inplace=inplace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/generic.py", line 8568, in _clip_with_scalar
+    result = result.where(cond, upper, inplace=inplace)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/generic.py", line 10321, in where
+    return self._where(cond, other, inplace=inplace, axis=axis, level=level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/generic.py", line 10146, in _where
+    new_data = self._mgr.where(
+               ^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/managers.py", line 473, in where
+    return self.apply(
+           ^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/managers.py", line 442, in apply
+    applied = getattr(b, f)(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/blocks.py", line 1705, in where
+    res_values = arr._where(cond, other).T
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/base.py", line 2607, in _where
+    result[~mask] = val
+    ~~~~~~^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/masked.py", line 377, in __setitem__
+    value = self._validate_setitem_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/masked.py", line 363, in _validate_setitem_value
+    raise TypeError(f"Invalid value '{value!s}' for dtype '{self.dtype}'")
+TypeError: Invalid value '73.30697111393077' for dtype 'Int64'
